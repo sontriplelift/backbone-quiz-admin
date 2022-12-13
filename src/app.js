@@ -3,10 +3,10 @@ import Router from "./router.js";
 import QuestionModel from "./models/QuestionModel.js";
 import QuestionCollection from "./collections/QuestionCollection.js";
 import QuestionListController from "./controllers/QuestionListController.js";
+import QuestionNewController from "./controllers/QuestionNewController.js";
 
 
 $(function() {
-    var questionCollection = new QuestionCollection()
     var router = new Router()
 
     router.on('route:home', function () {
@@ -24,7 +24,7 @@ $(function() {
 
     router.on('route:newQuestion', function () {
         console.log('route:newQuestion')
-        
+        QuestionNewController(router)
     });
 
     router.on('route:editQuestion', function () {
