@@ -7,7 +7,7 @@ function QuestionNewController(router) {
     var questionFormView = new QuestionFormView({
         model: newQuestionModel
     })
-    questionFormView.on('formSubmitted', function(attrs) {
+    questionFormView.on('formSubmitted', function() {
         newQuestionModel.save()
             .then(() => {
                 router.navigate('questions', true)

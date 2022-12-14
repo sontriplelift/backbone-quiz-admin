@@ -2,9 +2,11 @@ import AnswerTemplate from "../templates/AnswerTemplate.js";
 
 const AnswerView = Backbone.View.extend({
     template: _.template(AnswerTemplate),
-    render() {
+    render(option, isChecked) {
         var elementValue = sessionStorage.getItem('answerNo')
         var html = this.template({
+            option: option,
+            isChecked: isChecked,
             value: elementValue,
             id: "answer" + elementValue
         })

@@ -1,10 +1,10 @@
 const QuestionFormTemplate = 
     `
-    <h1>New question</h1>
+    <h1><%- id ? 'Edit' : 'New' %> question</h1>
     <form id="frm-create">
         <div class="form-group">
             <label for="text">Question:</label>
-            <input type="text" name="text" value="" class="input-question" />
+            <input type="text" name="text" value="<%- text %>" class="input-question" />
         </div>
         
         <div class="form-group">

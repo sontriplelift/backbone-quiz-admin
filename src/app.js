@@ -4,6 +4,7 @@ import QuestionModel from "./models/QuestionModel.js";
 import QuestionCollection from "./collections/QuestionCollection.js";
 import QuestionListController from "./controllers/QuestionListController.js";
 import QuestionNewController from "./controllers/QuestionNewController.js";
+import QuestionEditController from "./controllers/QuestionEditController.js";
 
 
 $(function() {
@@ -27,9 +28,9 @@ $(function() {
         QuestionNewController(router)
     });
 
-    router.on('route:editQuestion', function () {
-        console.log('route:editQuestion')
-        
+    router.on('route:editQuestion', function (questionId) {
+        console.log('route:editQuestion/' + questionId)
+        QuestionEditController(router, questionId)
     });
 
     Backbone.history.start();
