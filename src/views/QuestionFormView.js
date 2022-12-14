@@ -1,5 +1,6 @@
 import QuestionFormTemplate from "../templates/QuestionFormTemplate.js";
 import AnswerView from "./AnswerView.js";
+import ValidationMessageTemplate from "../templates/ValidationMessageTemplate.js";
 
 const QuestionFormView = Backbone.View.extend({
     template: _.template(QuestionFormTemplate),
@@ -56,8 +57,13 @@ const QuestionFormView = Backbone.View.extend({
         }
 
         this.model.set(input)
+
         if (this.model.isValid()) {
             this.trigger('formSubmitted', input)
+        } else {
+            this.$('.message').html(_.template(ValidationMessageTemplate, {
+                errMessage: this.model.validationError
+            }))
         }
     }
 })

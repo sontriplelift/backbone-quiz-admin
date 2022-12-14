@@ -170,8 +170,8 @@ th, td {
     padding: 15px;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.form-group .label-text {
+    margin-top: 16px;
 }
 
 .form-group label {
@@ -180,6 +180,12 @@ th, td {
 
 .form-group input[type="text"], .form-group select {
     width: 100%;
+}
+
+.message {
+    font-size: 14px;
+    color: red;
+    /* margin-bottom: 16px; */
 }
 
 .answer {
