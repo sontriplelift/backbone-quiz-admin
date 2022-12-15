@@ -11,6 +11,11 @@ function QuestionListController() {
             })
             $('.container').html(questionListView.render().$el)
         })
+
+    // var questionListView = new QuestionListView({
+    //     // collection: questionCollection
+    // })
+    // $('.container').html(questionListView.render().$el) 
 }
 
 export default QuestionListController

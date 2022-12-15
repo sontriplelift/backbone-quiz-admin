@@ -3,7 +3,7 @@ const QuestionListTemplate =
     <h1>All questions</h1>
 
     <div id="search">
-        <input type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search..." id="input-search" value="<%-keyword ?? '' %>" />
     </div>
 
     <table>
