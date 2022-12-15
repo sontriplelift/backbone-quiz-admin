@@ -26,7 +26,7 @@ const QuestionModel = Backbone.Model.extend({
             }
         }
         // validate correct answer(is any radio button checked)
-        if (!attrs.correct) {
+        if (!attrs.correct && attrs.correct !== 0) {
             return getMessage().M04
         }
     },
